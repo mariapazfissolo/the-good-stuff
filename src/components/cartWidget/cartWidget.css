@@ -1,0 +1,14 @@
+.carro{
+    width: 1.5rem;
+}
+.badge{
+    font-size: 17px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem;
+    background-color: #C8F353;
+    border-radius: 10%;
+}

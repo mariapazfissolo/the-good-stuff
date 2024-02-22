@@ -1,0 +1,23 @@
+.container2{
+    background-color: #C8F353;
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+}
+.bienvenida{
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+.saludo{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.flor{
+   width: 10rem;
+}
+.flower-power{
+    display: flex;
+    justify-content: center;
+}
