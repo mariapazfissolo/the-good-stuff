@@ -1,0 +1,13 @@
+.card-img-top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-radius: 1px solid black;
+}
+.genero{
+    color: grey;
+}
+.btn-ver-mas{
+   text-decoration: none;
+   border-radius: 1px solid black;
+}

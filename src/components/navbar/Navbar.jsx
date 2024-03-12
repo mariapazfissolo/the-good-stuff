@@ -3,11 +3,11 @@ import CartWidget from '../cartWidget/CartWidget';
 const Navbar = () => {
     return(
             <nav className='navContainer'>
-                <a className='logo' href="/">The good stuff</a>
+                <a className='logo' href="/">The Nike Stuff</a>
                 <div className='linksContainer'>
-                    <a className='link' href="/">MUJER </a>
-                    <a className='link' href="/">HOMBRE </a>
-                    <a className='link' href="/">SALE</a>
+                    <a className='link' href="/">Hombre </a>
+                    <a className='link' href="/">Mujer </a>
+                    <a className='link' href="/">Destacados</a>
                 </div>
                 <CartWidget/>
                 

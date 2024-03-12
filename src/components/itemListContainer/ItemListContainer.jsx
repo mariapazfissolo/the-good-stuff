@@ -1,16 +1,31 @@
+import React from 'react'
 import './itemListContainer.css'
-const ItemListContainer = ({greetting, saludo}) => {
-    return(
-        <div className='container2'>
-            <div className='intro'>
-                 <h1 className="bienvenida">{greetting}</h1>
-                <h3 className='saludo'>{saludo}</h3> 
-            </div>
-            <div className='flower-power'>
-                 <img className='flor' src="./images/flor.png" alt="loading sing"/>
-            </div>
-        </div>
-    )
-}
+import {useState, useEffect} from 'react'
+import ItemCount from '../itemCount/ItemCount'
+import { getProducts } from '../../mock/fakeApi'
+import ItemList from '../itemList/ItemList'
+
+
+
+ function ItemListContainer ({greetting}) {
+    const [productos, setProductos]=useState([])
+    
+    useEffect(()=>{
+        getProducts()
+        .then((res)=>setProductos(res))
+        .catch((error)=> console.log(error, 'todo mal'))
+      },[])
+
+
+     return(
+         <div className='container2'>
+             <div className='intro'>
+                  <h1 className="bienvenida">{greetting}</h1>
+                  <ItemList productos={productos}/>
+                  <ItemCount stock={11}></ItemCount>
+             </div>
+         </div>
+     )
+ }
 
 export default ItemListContainer;
