@@ -1,8 +1,10 @@
 .carro{
     width: 1.5rem;
+    background-color: #C8F353;
 }
 .badge{
     font-size: 17px;
+    background-color: #C8F353;
 }
 .container{
     display: flex;

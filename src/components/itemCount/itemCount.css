@@ -1,0 +1,41 @@
+.contador{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.btn-restar{
+    font-size: 20px;
+    /* padding: .5rem;*/
+    margin-right:.5rem; 
+    height: 3rem;
+    width: 5rem;
+    border-style: solid;
+    border-width: .2rem;
+    border-color: #C8F353;
+    border-radius: 2rem;
+}
+.btn-sumar{
+    font-size: 20px;
+    margin:.5rem;
+    padding: .5rem;
+    height: 3rem;
+    width: 5rem;
+    border-style: solid;
+    border-width: .2rem;
+    border-color: #C8F353;
+    border-radius: 2rem;
+}
+.btn-comprar{
+    padding: .5rem;
+    margin: .5rem;
+    height: 3rem;
+    width: 5rem;
+    border-style: solid;
+    border-width: .2rem;
+    border-color: #C8F353;
+    border-radius: 2rem;
+    font-weight: 600;
+   
+    
+
+}

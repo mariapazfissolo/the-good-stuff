@@ -1,0 +1,43 @@
+*{
+    background-color: #F5F5F5;
+}
+.detalle-producto{
+    padding-left: 6rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,.1fr); 
+    grid-template-rows: repeat(1,.1fr);
+    grid-template-areas: 
+    "prod-nombre       ........         "
+    "prod-img          prod-description "
+    " .......          prod-precio      "
+    " .......          contador         "
+}
+.prod-nombre{
+    grid-area: prod-nombre;
+    font-size: 24px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+.prod-img{
+    grid-area: prod-img;
+    justify-content: left;
+    height: 400px;
+    width: 400px;
+}
+.prod-description{
+    padding-top: 3rem;
+    padding-left: 14rem;
+    grid-area: prod-description;
+    justify-content: center;
+    font-size: 16px; 
+}
+.prod-precio{
+    padding-left: 15rem;
+    grid-area: prod-precio;
+    font-size: 18px;
+    font-weight: 700;
+}
+.contador{
+    grid-area: prod-contador;
+}

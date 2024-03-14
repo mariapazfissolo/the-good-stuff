@@ -1,21 +1,19 @@
 import './App.css'
 import Navbar from './components/navbar/Navbar'
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
-import ItemCount from './components/itemCount/ItemCount';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-
 
 function App() {
   return (
-    <BrowserRouter> 
+   <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path='/' element={ <ItemListContainer greetting='Envío grátis a partir de $250.000'/> } />
+      <Route path='/' element={<ItemListContainer greetting='Envío grátis a partir de $210.000'/> }/>
+      <Route path='/categories/:categoryId' element={<ItemListContainer greetting='Categoría:'/>}/>
+      <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
     </Routes>
-     
-     
-    </BrowserRouter>
+  </BrowserRouter> 
   )
-  }
+}
 export default App;

@@ -1,7 +1,4 @@
- .container2{
-    background-color: #F5F5F5;
-}
-.bienvenida{
+.banner{
     color: black;
     display: flex;
     justify-content: center;
@@ -11,15 +8,6 @@
     border-bottom: 1px solid #C8F353 ;
     background-color: #C8F353;
 }
-.saludo{
-    display: flex;
-    justify-content: center;
-    color: black;
-}
-.flor{
-   width: 10rem;
-}
-.flower-power{
-    display: flex;
-    justify-content: center;
+.banner-category{
+    background-color: #C8F353;
 }
