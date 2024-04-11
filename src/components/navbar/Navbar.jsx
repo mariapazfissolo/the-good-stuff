@@ -11,8 +11,11 @@ const Navbar = () => {
                 <NavLink className='link' to='/categories/Mujer'>Mujer </NavLink>
                 <NavLink className='link' to='/categories/Oportunidades'>Oportunidades</NavLink>
             </div>
-            <CartWidget/>
-        </nav>
+            <NavLink to='/cart' >
+                 <CartWidget counter={15}/>
+            </NavLink>
+         
+        </nav>  
     )
 }
 

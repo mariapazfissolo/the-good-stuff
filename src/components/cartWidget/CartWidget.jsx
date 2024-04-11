@@ -1,9 +1,14 @@
+import { useContext } from 'react';
 import './cartWidget.css'
-const CartWidget = () => {
+import { CartContext } from '../../context/CartContext';
+
+const CartWidget = ({counter}) => {
+    const {cart} =useContext(CartContext)
+    console.log(cart)
     return(
         <div className='container'>
         <img className='carro' src='./images/carrito.png'alt='carrito'/>
-        <span className='badge'>5</span>
+        <span className='badge'>{cart.length}</span>
         </div>
     )
 }
