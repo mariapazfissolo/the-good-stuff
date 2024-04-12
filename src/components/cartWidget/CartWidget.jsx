@@ -3,12 +3,12 @@ import './cartWidget.css'
 import { CartContext } from '../../context/CartContext';
 
 const CartWidget = ({counter}) => {
-    const {cart} =useContext(CartContext)
-    console.log(cart)
+    const {cartQuantity} =useContext(CartContext)
+
     return(
         <div className='container'>
         <img className='carro' src='./images/carrito.png'alt='carrito'/>
-        <span className='badge'>{cart.length}</span>
+        {cartQuantity() > 0 && <span className='badge'>{cartQuantity()}</span>}
         </div>
     )
 }

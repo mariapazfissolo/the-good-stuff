@@ -5,8 +5,7 @@
     background-color: #F5F5F5;
     align-items: center;
     border-bottom: 1px solid #C8F353;
-    padding: 1rem 3rem;
-    position: sticky;
+    padding: 1rem;
 }
 .logo{
     font-size: 2rem;
@@ -18,8 +17,10 @@
 .linksContainer{
     display: flex;
     gap: 1rem;
+     margin-right: 8rem;
 }
 .link{
     color: black;
     text-decoration: none;
+   
 }

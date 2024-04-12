@@ -2,42 +2,41 @@
     background-color: #F5F5F5;
 }
 .detalle-producto{
-    padding-left: 6rem;
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-columns: repeat(2,.1fr); 
-    grid-template-rows: repeat(1,.1fr);
-    grid-template-areas: 
-    "prod-nombre       ........         "
-    "prod-img          prod-description "
-    " .......          prod-precio      "
-    " .......          contador         "
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 .prod-nombre{
-    grid-area: prod-nombre;
     font-size: 24px;
     padding-top: 2rem;
-    padding-left: 2rem;
 }
 .prod-img{
-    grid-area: prod-img;
-    justify-content: left;
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
 }
 .prod-description{
-    padding-top: 3rem;
-    padding-left: 14rem;
-    grid-area: prod-description;
+    margin: 2rem;
+    text-align: center;
     justify-content: center;
     font-size: 16px; 
 }
 .prod-precio{
-    padding-left: 15rem;
-    grid-area: prod-precio;
-    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
     font-weight: 700;
+    padding: .5rem;
+    gap: .5rem;
+}
+.aviso{
+    font-size: 17px;
+    font-weight: 300;
 }
 .contador{
-    grid-area: prod-contador;
+column-gap: .5rem;
 }

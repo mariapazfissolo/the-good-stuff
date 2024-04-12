@@ -2,7 +2,7 @@ const productos = [
     {
         id:'1',
         name: 'Nike Dunk Low',
-        stock: 10,
+        stock: 4,
         price: 169.999,
         description: 'El Nike Dunk Low es esencial para tu armario. Este ícono del básquetbol de mediados de los 80 regresa con una confección superduradera y los colores del original. La almohadilla en el tobillo y la tracción de goma lo convierten en todo un éxito.',
         imagen:'https://i.postimg.cc/DzGm2bHX/nike-panda-der.jpg',
@@ -12,7 +12,7 @@ const productos = [
     {
         id:'2',
         name: 'Nike Dunk Low Verde',
-        stock: 6,
+        stock: 3,
         price: 209.999,
         description: 'No todo lo que brilla es oro. Confeccionado con una espléndida tela suave y satinada, el Dunk Low es más elegante que el calzado común y lo suficientemente deportivo como para un atuendo informal. ',
         imagen:'https://i.postimg.cc/8cG93qQY/DX5931-100-A-PREM.jpg',
@@ -32,7 +32,7 @@ const productos = [
     {
         id:'4',
         name: 'Nike Dunk High',
-        stock: 9,
+        stock: 6,
         price: 229.999,
         description: 'Desde los tableros hasta el skateboard, la influencia del Nike Dunk es innegable. Aunque se presentó como un calzado de básquetbol en 1985, la suela plana y adherente es perfecta para una comunidad deportiva desatendida: los skaters. Al revelar una subcultura que anhela la creatividad tanto como la funcionalidad, el Dunk lanzó décadas de incontables gamas de colores que continúan capturando el alma de los skaters de costa a costa.',
         imagen:'https://i.postimg.cc/kGD1k9Yf/DD1869-107-A-PREM.jpg',

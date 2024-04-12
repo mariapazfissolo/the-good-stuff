@@ -5,8 +5,6 @@ import './itemCount.css'
 const ItemCount = ({stock, onAdd}) =>{
     const [count, setCount]= useState(1)
 
-    
-
     const sumar = () =>{
         if(count < stock){
             setCount(count + 1)
@@ -23,7 +21,7 @@ const ItemCount = ({stock, onAdd}) =>{
         <>
         <div className="contador">
         <button className="btn-restar" onClick={restar}>-</button>
-            <span  className="btn">{count}</span>
+            <span  className="inicial">{count}</span>
             <button className="btn-sumar" onClick={sumar}>+</button>
             <button className="btn-comprar" disabled={stock === 0 || count === 0} onClick={()=>onAdd(count)}>Comprar</button>
         </div>

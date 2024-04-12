@@ -5,6 +5,9 @@
 .badge{
     font-size: 17px;
     background-color: #C8F353;
+    color: black;
+    text-decoration: none;
+    
 }
 .container{
     display: flex;
@@ -13,4 +16,5 @@
     padding: .6rem;
     background-color: #C8F353;
     border-radius: 10%;
+    
 }

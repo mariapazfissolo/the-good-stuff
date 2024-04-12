@@ -1,0 +1,28 @@
+.carrito-vacio{
+    display: flex;
+    flex-direction: column;
+    padding-top: 7rem;
+    margin: 5rem;
+}
+
+.carrito{
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    padding-top: .5rem;
+    font-size: 20px;
+    background-color: transparent;
+}
+.btn-ver{
+    display: flex;
+    padding: 10px 10px; 
+    font-size: 16px;
+    background-color: #C8F353; 
+    color: black; 
+    border-radius: 5px; 
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
