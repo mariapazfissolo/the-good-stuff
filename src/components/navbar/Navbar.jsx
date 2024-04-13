@@ -2,7 +2,7 @@ import './navbar.css'
 import CartWidget from '../cartWidget/CartWidget';
 import {NavLink} from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar () {
     return(
         <nav className='navContainer'>
             <NavLink className='logo' to='/'>The Nike Stuff</NavLink>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from '../../mock/data';
 import ItemDetail from '../itemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import Loader from '../loader/Loader';
@@ -10,28 +9,30 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState ({})
     const [cargando, setCargando] = useState(false)
     const {itemId} = useParams()
-
-    //useEffect (() => {
-    //setCargando(true)
-    //getProducts()
-    //.then((res)=> setProducto (res.find((item)=> item.id === itemId)))
-    //.catch ((error)=>console.log(error))
-    //.finally(()=> setCargando(false))
-    //},[itemId])
+    const [validateItem, setValidateItem] = useState(false)
 
     useEffect(()=>{
         setCargando(true)
         const collectionProd = collection(db,"productos")
         const referenciaDoc = doc (collectionProd,itemId)
         getDoc(referenciaDoc)
-        .then((res)=> setProducto({id:res.id, ...res.data()}))
+        .then((res)=> {
+            if(res.data()){
+                setProducto({id:res.id, ...res.data()})
+            }else{
+                setValidateItem(true)
+            }
+        })
         .catch((error)=>console.log(error))
         .finally(()=> setCargando(false))
     },[itemId])
-
-    return (
+    
+    if(cargando){
+        return <h1 className='carga-item'><Loader/></h1>
+    }
+    return(
         <div>
-             { cargando ? <h1 className='carga-item'><Loader/></h1> : <ItemDetail producto={producto}/>}
+            {validateItem ? <p className='no-producto'>El producto no existe</p> : <ItemDetail producto={producto}/>}
         </div>
     )
 }

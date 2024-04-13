@@ -1,0 +1,7 @@
+.no-producto{
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    font-size: 24px;
+}

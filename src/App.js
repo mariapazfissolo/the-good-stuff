@@ -18,6 +18,7 @@ function App() {
       <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/checkout' element={<Checkout/>} />
+      <Route path='*' element={<h2>404: No existe</h2>}/>
     </Routes>
   </BrowserRouter> 
   </CartProvider>

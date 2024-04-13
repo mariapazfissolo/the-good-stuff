@@ -9,6 +9,7 @@ const Checkout = () => {
     const [user, setUser] = useState({})
     const [orderId, setOrderId] = useState('')
     const {cart, cartPriceTotal, clear} = useContext(CartContext)
+    const [validateEmail, setValidateEmail]=useState('')
 
     const userData = (e) =>{
         setUser(
@@ -21,7 +22,9 @@ const Checkout = () => {
     const finalizarCompra = (e) => {
         e.preventDefault()
         if (!user.name || !user.lastname || !user.email || !user.phone || !user.dni){
-            alert('Completa todos los campos')
+            alert('Todos los campos son obligatorios')
+        }else if(user.email !== validateEmail){
+            alert('Los E-mails deben ser iguales')
         }else{
             let order ={
                 user,
@@ -44,7 +47,6 @@ const Checkout = () => {
             })
             .catch((error)=>console.log(error))
         }
-        
     }
 
     return(
@@ -60,12 +62,32 @@ const Checkout = () => {
             <h3 className="titulo-form">Último paso! 🤞🏼</h3>
             <h4 className="subtitulo-form">Completá tus datos:</h4>
             <form onSubmit={finalizarCompra} className="formulario">
-                <input className="item-form" name='name' placeholder='Nombre' type="text" onChange={userData}/>
-                <input className="item-form" name='lastname' placeholder='Apellido' type="text" onChange={userData}/>
-                <input className="item-form" name='email' placeholder='su@correo.com' type="email" onChange={userData}/>
-                <input className="item-form" name='phone' placeholder='9 999 999 999' type="number" onChange={userData}/>
-                <input className="item-form" name='dni' placeholder='99999999' type="number" onChange={userData}/>
-                <button className="btn-enviar" type="submit">Enviar</button>
+                <label className="nombres-items">
+                    <p className="item">Nombre*</p>
+                    <input className="item-form" name='name' placeholder='Nombre' type="text" onChange={userData}/>
+                </label>
+                <label className="nombres-items">
+                    <p className="item">Apellido*</p>
+                    <input className="item-form" name='lastname' placeholder='Apellido' type="text" onChange={userData}/>
+                </label>
+                <label className="nombres-items">
+                    <p className="item">E-mail*</p>
+                    <input className="item-form" name='email' placeholder='su@correo.com' type="email" onChange={userData}/>
+                </label>
+                <label className="nombres-items">
+                    <p className="item">Repetir E-mail*</p>
+                    <input className="item-form" name='emailrep' placeholder='su@correo.com'type='email' onChange={(e)=> setValidateEmail(e.target.value)}/>
+                </label>
+                <label className="nombres-items">
+                    <p className="item">Celular/Telefono*</p>
+                    <input className="item-form" name='phone' placeholder='9 999 999 999' type="number" onChange={userData}/>
+                </label>
+                <label className="nombres-items">
+                   <p className="item">DNI*</p><p className="espacios" >(sin puntos ni espacios)</p>
+                    <input className="item-form" name='dni' placeholder='99999999' type="number" onChange={userData}/>
+                </label>
+               
+                <button className="btn-enviar" type="submit">Confirmar compra</button>
             </form>
         </div>}
         </div>
