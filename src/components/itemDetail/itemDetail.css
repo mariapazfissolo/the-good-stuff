@@ -40,3 +40,7 @@
 .contador{
 column-gap: .5rem;
 }
+.ir-al-carrito{
+    text-decoration: none;
+    color: black;
+}

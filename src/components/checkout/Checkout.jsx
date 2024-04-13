@@ -3,6 +3,7 @@ import { CartContext } from '../../context/CartContext'
 import { addDoc, collection,serverTimestamp, updateDoc, doc, getDoc } from "firebase/firestore";
 import {db} from '../../services/firebase'
 import { Link } from "react-router-dom";
+import './checkout.css'
 
 const Checkout = () => {
     const [user, setUser] = useState({})
@@ -50,21 +51,21 @@ const Checkout = () => {
         <div>
         {orderId !==''
         ?<div>
-            <h4>Generaste tu orden!</h4>
-            <h5>El id es: {orderId}</h5>
-            <Link to ='/'>Volver a Inicio 🏠</Link>
+            <h4 className="titulo-orden">Generaste tu orden con éxito! 👏🏼</h4>
+            <h5 className="id-orden">El ID de tu producto es: {orderId}</h5>
+            <Link className="inicio-orden" to ='/'>Volver al Inicio 🏠</Link>
         </div>
         :
         <div>
-            <h3>Último paso!</h3>
-            <h4>Completá tus datos:</h4>
-            <form onSubmit={finalizarCompra}>
-                <input name='name' placeholder='Nombre' type="text" onChange={userData}/>
-                <input name='lastname' placeholder='Apellido' type="text" onChange={userData}/>
-                <input name='email' placeholder='su@correo.com' type="email" onChange={userData}/>
-                <input name='phone' placeholder='9 999 999 999' type="number" onChange={userData}/>
-                <input name='dni' placeholder='99999999' type="number" onChange={userData}/>
-                <button type="submit">Enviar</button>
+            <h3 className="titulo-form">Último paso! 🤞🏼</h3>
+            <h4 className="subtitulo-form">Completá tus datos:</h4>
+            <form onSubmit={finalizarCompra} className="formulario">
+                <input className="item-form" name='name' placeholder='Nombre' type="text" onChange={userData}/>
+                <input className="item-form" name='lastname' placeholder='Apellido' type="text" onChange={userData}/>
+                <input className="item-form" name='email' placeholder='su@correo.com' type="email" onChange={userData}/>
+                <input className="item-form" name='phone' placeholder='9 999 999 999' type="number" onChange={userData}/>
+                <input className="item-form" name='dni' placeholder='99999999' type="number" onChange={userData}/>
+                <button className="btn-enviar" type="submit">Enviar</button>
             </form>
         </div>}
         </div>

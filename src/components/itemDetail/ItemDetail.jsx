@@ -20,7 +20,7 @@ const ItemDetail = ({producto}) =>{
             <p className="prod-precio">${producto.price} 
             {compra && <p>Agregaste "{producto.name}" al carrito ❤️</p>}
             {producto.stock < 4  && <p className="aviso">Apurate! Quedan pocas unidades en stock! 😱</p>}
-            { compra ? <button className="btn-comprar"><Link to='/Cart'>Ir al carrito</Link></button> : 
+            { compra ? <button className="btn-comprar"><Link className="ir-al-carrito" to='/Cart'>Ir al carrito</Link></button> : 
             <ItemCount stock={producto.stock} onAdd={onAdd}/>}</p>  
         </div>
     )
