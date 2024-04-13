@@ -1,12 +1,12 @@
 import React from 'react'
 import './itemListContainer.css'
 import {useState, useEffect} from 'react'
-import { getProducts } from '../../mock/data'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Loader from '../loader/Loader'
-import {collection, getDocs, query, where} from 'firebase/firestore'
+import {addDoc, collection, getDocs, query, where} from 'firebase/firestore'
 import { db } from '../../services/firebase'
+import { productosData } from '../../mock/data'
 
 function ItemListContainer ({greetting}) {
   const [productos, setProductos]=useState([])
@@ -45,6 +45,11 @@ function ItemListContainer ({greetting}) {
     .finally(()=>setLoading(false))
   },[categoryId])
 
+  const addData = () =>{
+    const collectionProd = collection (db,"productos")
+    productosData.map((item)=> addDoc(collectionProd,item))
+  }
+
   if (loading){
     return(
       <Loader/>
@@ -53,9 +58,10 @@ function ItemListContainer ({greetting}) {
 
   return(
     <div className='container2'>
-      {categoryId ?<h1 className='banner-1'>{greetting} <span className='banner-category'>{categoryId}</span></h1> :<h1 className='banner-2'>{greetting}</h1>}
-             
-    <ItemList productos={productos}/>
+      {categoryId ?<h1 className='banner-1'>{greetting} <span className='banner-category'>{categoryId}</span></h1> :<h1 className='banner-2'>{greetting}</h1>
+      }
+      {/* <button onClick={addData}>Agregar productos</button> */}
+      <ItemList productos={productos}/>
     </div>
   )
 }

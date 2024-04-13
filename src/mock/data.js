@@ -1,36 +1,5 @@
-const productos = [
+export const productosData = [
     {
-        id:'1',
-        name: 'Nike Dunk Low',
-        stock: 4,
-        price: 169.999,
-        description: 'El Nike Dunk Low es esencial para tu armario. Este ícono del básquetbol de mediados de los 80 regresa con una confección superduradera y los colores del original. La almohadilla en el tobillo y la tracción de goma lo convierten en todo un éxito.',
-        imagen:'https://i.postimg.cc/DzGm2bHX/nike-panda-der.jpg',
-        category:'Hombre',
-        genero:'Zapatillas de Moda para Hombre',
-    },
-    {
-        id:'2',
-        name: 'Nike Dunk Low Verde',
-        stock: 3,
-        price: 209.999,
-        description: 'No todo lo que brilla es oro. Confeccionado con una espléndida tela suave y satinada, el Dunk Low es más elegante que el calzado común y lo suficientemente deportivo como para un atuendo informal. ',
-        imagen:'https://i.postimg.cc/8cG93qQY/DX5931-100-A-PREM.jpg',
-        category:'Mujer',
-        genero:'Zapatillas de Moda para Mujer',
-    },
-    {
-        id:'3',
-        name: 'Nike Dunk Low "Mica Green"',
-        stock: 9,
-        price: 205.999,
-        description: 'Cuero texturizado. Lona premium. Colores frescos. Este Dunk Low es un estilo discreto que añade el brillo perfecto a tu look. Con su estilo de básquetbol retro y cuello cómodo de corte low, mantuvimos todo lo que amas de este básico de estilo moderno. ¿Un toque final? Las agujetas con colores a juego traen la alegría a cada paso.',
-        imagen:'https://i.postimg.cc/wMKRdQ0Z/DV7212-300-A-PREM.jpg',
-        category:'Hombre',
-        genero:'Zapatillas de Moda para Hombre',
-    },
-    {
-        id:'4',
         name: 'Nike Dunk High',
         stock: 6,
         price: 229.999,
@@ -40,7 +9,6 @@ const productos = [
         genero:'Zapatillas de Moda para Hombre',
     },
     {
-        id:'5',
         name: 'Nike Dunk Low Rosa',
         stock: 6,
         price: 210.999,
@@ -50,7 +18,6 @@ const productos = [
         genero:'Zapatillas de Moda para Hombre',
     },
     {
-        id:'6',
         name: 'Nike Air Force 1 .07',
         stock: 11,
         price: 150.999,
@@ -58,7 +25,44 @@ const productos = [
         imagen:'https://i.postimg.cc/vT0N2h7F/CW2288-111-A-PREM-hei-3144-wid-3144-fmt.jpg',
         category:'Oportunidades',
         genero:'Zapatillas de Moda para Hombre',
+    },
+    {
+        name: 'Nike Dunk Low Esme',
+        stock: 2,
+        price: 209.999,
+        description: 'El ícono del básquetbol de los 80, que se creó para la cancha pero conquistó las calles, vuelve con revestimientos perfectamente brillantes y colores del equipo clásicos. Con su diseño icónico de básquetbol, el clásico Nike Dunk Low canaliza el espíritu vintage de la década de los 80 y vuelve a las calles, al tiempo que su cuello acolchado de corte low te permite llevar tu juego a cualquier lugar con comodidad.',
+        imagen:'https://i.postimg.cc/mDNgftjp/image.jpg',
+        category:'Oportunidades',
+        genero:'Zapatillas de Moda para Mujer',
+    },
+    {
+        name: 'Air Jordan 1 Low',
+        stock: 7,
+        price: 309.999,
+        description: 'Siempre a la moda, siempre fresca. El Air Jordan 1 Low te ofrece una parte de la historia y herencia Jordan con una comodidad que dura todo el día. Elige tus colores y sal con el perfil icónico creado con una combinación de materiales de alta calidad y Air encapsulado en el talón.',
+        imagen:'https://i.postimg.cc/vH1w549R/image.jpg',
+        category:'Mujer',
+        genero:'Zapatillas de Moda para Mujer',
+    },
+    {
+        name: 'Air Jordan 1 Mid SE',
+        stock: 5,
+        price: 259.999,
+        description: 'El bordado de lujo y la paleta tenue aportan una sensación de frescura discreta al AJ1 Mid. La edición especial Swoosh agrega un toque de brillo a un calzado que se ve bien (y se siente bien) sin importar dónde lo uses.La amortiguación Nike Air en el talón crea una amortiguación ligera y flexible y la confección de la suela cupsole ofrece soporte de perfil bajo, además la suela de goma sólida cuenta con ranuras flexibles en el antepié para brindar soporte al movimiento natural.',
+        imagen:'https://i.postimg.cc/zvhZZMqz/image.jpg',
+        category:'Hombre',
+        genero:'Zapatillas de Moda para Hombre',
+    },
+    {
+        name: 'Nike Air Force 1 07 LV8',
+        stock: 8,
+        price: 239.999,
+        description: 'El fulgor sigue vive en el Air Force 1 07 LV8. Al combinar la comodidad de la cancha con un estilo fuera de la cancha, este calzado agrega un toque de estilo ingenioso a un modelo original de básquetbol. La gamuza suave y la confección que conmemora la era de los 80 agregan un estilo de básquetbol total',
+        imagen:'https://i.postimg.cc/C555GwCv/image.jpg',
+        category:'Mujer',
+        genero:'Zapatillas de Moda para Mujer',
     }
+
 ]
 export const getProducts = () =>{
     let error = false
@@ -68,7 +72,7 @@ export const getProducts = () =>{
             if(error){
                 reject('Hubo un problema intente mas tarde')
             }else{
-                resolve(productos)
+                resolve(productosData)
                 }
         },1000)
     })
@@ -81,7 +85,7 @@ export const getOneProduct = (id) =>{
             if(error){
                 reject('El producto no existe')
             }else{
-                let product = productos.find((prod)=> prod.id === id)
+                let product = productosData.find((prod)=> prod.id === id)
                 resolve(product)
             }
         },1000)
